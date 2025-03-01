@@ -29,4 +29,5 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/Users/morsak/.cargo/bin:$PATH"
 
 alias v=nvim
+alias vi=nvim
 alias vim=nvim
