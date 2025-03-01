@@ -122,12 +122,10 @@ format = '[ $symbol ($version) ]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#5e81ac bold"
-# format = '[ ♥ $time ]($style)'
 format = '[$time ]($style)'
 
 [character]
 disabled = false
 success_symbol = "[ ♥ ](bg:#5e81ac)"
 error_symbol = "[ ✖ ](bg:#5e81ac)"
-# format = '[ ♥ $time ]($style)'
 format = "$symbol"
