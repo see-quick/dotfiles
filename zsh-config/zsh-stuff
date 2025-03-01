@@ -1,0 +1,32 @@
+# active starship :))
+eval "$(starship init zsh)"
+
+# activate syntax highlight
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Disable underline
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]=none
+ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# active autosuggestion
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# JAVA
+#export JAVA_HOME="/opt/homebrew/opt/openjdk@21"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+#export JAVA_HOME="/opt/homebrew/opt/openjdk@11"
+
+export PATH=$JAVA_HOME/bin:$PATH
+# also add python
+export PATH=$/Users/morsak/Library/Python/3.9/bin:$PATH
+
+# for libressl
+export PATH="/opt/homebrew/opt/libressl/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
+# for asm-lisp
+export PATH="/Users/morsak/.cargo/bin:$PATH"
+
+alias v=nvim
+alias vim=nvim
