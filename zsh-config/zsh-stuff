@@ -32,8 +32,8 @@ alias v=nvim
 alias vi=nvim
 alias vim=nvim
 
-# for better ls
-alias ls="eza --icons=always"
-# for better cd
-eval "$(zoxide init zsh)"
-alias cd="z"
+# for better ls (f you need to pipe the eza output the nerd icons are weird unicode which is not fun)
+alias ls="eza --icons=auto"
+# for better cd (not need for aliasing)
+eval "$(zoxide init zsh --cmd cd)"
+# alias cd="z"
