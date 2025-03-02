@@ -31,3 +31,9 @@ export PATH="/Users/morsak/.cargo/bin:$PATH"
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
+
+# for better ls
+alias ls="eza --icons=always"
+# for better cd
+eval "$(zoxide init zsh)"
+alias cd="z"
