@@ -47,6 +47,27 @@ config = {
       mods = "CMD",
       action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
     },
+     -- Pane navigation (SHIFT + CMD + Arrow keys)
+    {
+      key = "LeftArrow",
+      mods = "SHIFT|CMD",
+      action = wezterm.action.ActivatePaneDirection("Left"),
+    },
+    {
+      key = "RightArrow",
+      mods = "SHIFT|CMD",
+      action = wezterm.action.ActivatePaneDirection("Right"),
+    },
+    {
+      key = "UpArrow",
+      mods = "SHIFT|CMD",
+      action = wezterm.action.ActivatePaneDirection("Up"),
+    },
+    {
+      key = "DownArrow",
+      mods = "SHIFT|CMD",
+      action = wezterm.action.ActivatePaneDirection("Down"),
+    },
     {
     -- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
       key = 'LeftArrow',
@@ -54,13 +75,13 @@ config = {
       action = wezterm.action.SendKey {
       key = 'b',
       mods = 'ALT',
+      },
     },
-  },
-  {
-    key = 'RightArrow',
-    mods = 'OPT',
-    action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
-  },
+    {
+      key = 'RightArrow',
+      mods = 'OPT',
+      action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
+    },
   },
   -- from: https://akos.ma/blog/adopting-wezterm/
   hyperlink_rules = {
