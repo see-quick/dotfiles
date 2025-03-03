@@ -47,6 +47,20 @@ config = {
       mods = "CMD",
       action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
     },
+    {
+    -- Rebind OPT-Left, OPT-Right as ALT-b, ALT-f respectively to match Terminal.app behavior
+      key = 'LeftArrow',
+      mods = 'OPT',
+      action = wezterm.action.SendKey {
+      key = 'b',
+      mods = 'ALT',
+    },
+  },
+  {
+    key = 'RightArrow',
+    mods = 'OPT',
+    action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
+  },
   },
   -- from: https://akos.ma/blog/adopting-wezterm/
   hyperlink_rules = {
