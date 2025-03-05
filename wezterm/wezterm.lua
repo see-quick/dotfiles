@@ -82,6 +82,11 @@ config = {
       mods = 'OPT',
       action = wezterm.action.SendKey { key = 'f', mods = 'ALT' },
     },
+    {
+      key = "f",
+      mods = "CMD|OPT",
+      action = wezterm.action.ToggleFullScreen,
+    },
   },
   -- from: https://akos.ma/blog/adopting-wezterm/
   hyperlink_rules = {
@@ -93,9 +98,7 @@ config = {
     },
     -- Matches: a URL in brackets: [URL]
     {
-      regex = "\\[(\\w+://\\S+)\\]",
-      format = "$1",
-      highlight = 1,
+  regex = "\\[(\\w+://\\S+)\\]", format = "$1", highlight = 1,
     },
     -- Matches: a URL in curly braces: {URL}
     {
