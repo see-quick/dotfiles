@@ -87,6 +87,11 @@ config = {
       mods = "CMD|OPT",
       action = wezterm.action.ToggleFullScreen,
     },
+    {
+      key = "t",
+      mods = "CMD|OPT",
+      action = wezterm.action.SpawnWindow,
+    },
   },
   -- from: https://akos.ma/blog/adopting-wezterm/
   hyperlink_rules = {
