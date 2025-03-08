@@ -39,6 +39,8 @@ return {
 	      "asm_lsp",
         "bashls",
         "clangd", -- C, C++ LSP
+        "gopls", -- Go LSP
+        "rust_analyzer", -- Rust LSP
       },
     })
 
@@ -52,7 +54,8 @@ return {
         "eslint_d",
 	      "shellharden", -- "bash linter, formatter"
         "clang-format",
-        "codelldb"
+        "codelldb",
+        "golangci-lint", -- Go Lint
       },
     })
   end,
