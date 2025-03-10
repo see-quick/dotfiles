@@ -9,12 +9,29 @@ return {
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
+    -- Register Quint as a custom server
+    local configs = require("lspconfig.configs")
+    -- Import coq
+    local coq = require("coq")
+
+    if not configs.quint then
+      configs.quint = {
+      default_config = {
+        cmd = { "quint-language-server", "--stdio" }, -- Start Quint LSP
+        filetypes = { "quint" },
+          root_dir = function(fname)
+          return vim.fs.dirname(fname)
+        end,
+        single_file_support = true,
+      },
+    }
+    end
+
+    -- ✅ Now setup Quint LSP with COQ (autocomplete)
+    lspconfig.quint.setup(coq.lsp_ensure_capabilities({}))
 
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
-
-    -- Import coq
-    local coq = require("coq")
 
     local keymap = vim.keymap -- for conciseness
 
@@ -128,6 +145,7 @@ return {
         }))
       end,
     })
-  end,
+
+ end,
 }
 
