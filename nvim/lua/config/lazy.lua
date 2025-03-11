@@ -19,6 +19,9 @@ vim.cmd [[
 vim.cmd [[
   au BufRead,BufNewFile *.qnt setfiletype quint
 ]]
+vim.g.coq_settings = {
+  auto_start = 'shut-up' -- Automatically starts COQ in the background
+}
 
 
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
