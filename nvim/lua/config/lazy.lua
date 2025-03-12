@@ -20,7 +20,11 @@ vim.cmd [[
   au BufRead,BufNewFile *.qnt setfiletype quint
 ]]
 vim.g.coq_settings = {
-  auto_start = 'shut-up' -- Automatically starts COQ in the background
+  auto_start = 'shut-up', -- Automatically starts COQ in the background
+  clients = {
+    lsp = { enabled = true },
+    snippets = { enabled = true },
+  },
 }
 
 
