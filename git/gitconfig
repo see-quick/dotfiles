@@ -2,14 +2,14 @@
 	email = maros.orsak159@gmail.com
   name = see-quick
 
-[user]
-  name = see-quick
-
 [alias]
   # Better visualization of commits
   structure = log --oneline --simplify-by-decoration --graph --all
   lg        = log --graph --decorate --pretty=format:'%C(auto)%h %C(bold blue)%d %C(reset)%s %C(dim white)- %an, %ar' --all
   hist      = log --pretty=format:'%C(yellow)%h %C(green)%ad %C(auto)%d %C(reset)%s %C(dim white)- %an' --date=short --graph --all
+
+  # Add 
+  a         = add
 
   # Quick commit and push
   cm        = commit -m
