@@ -1,0 +1,47 @@
+[user]
+	email = maros.orsak159@gmail.com
+  name = see-quick
+
+[user]
+  name = see-quick
+
+[alias]
+  # Better visualization of commits
+  structure = log --oneline --simplify-by-decoration --graph --all
+  lg        = log --graph --decorate --pretty=format:'%C(auto)%h %C(bold blue)%d %C(reset)%s %C(dim white)- %an, %ar' --all
+  hist      = log --pretty=format:'%C(yellow)%h %C(green)%ad %C(auto)%d %C(reset)%s %C(dim white)- %an' --date=short --graph --all
+
+  # Quick commit and push
+  cm        = commit -m
+  amend     = commit --amend --no-edit
+  pushf     = push --force-with-lease
+
+  # Branch management
+  b         = branch
+  bd        = branch -d
+  bD        = branch -D
+  co        = checkout
+  cob       = checkout -b
+
+  # Status & Diff
+  st        = status
+  d         = diff
+  dc        = diff --cached
+
+  # Stashing
+  sa        = stash apply
+  sl        = stash list
+  ss        = stash save
+  sp        = stash pop
+
+  # Fetching and Pulling
+  f         = fetch --prune
+  pl        = pull --rebase
+  up        = !git fetch --prune && git pull --rebase
+
+  # Cleaning up
+  cleanall  = "!git reset --hard && git clean -fd"
+
+  # Shortcuts for submodules
+  smu       = submodule update --init --recursive
+  sml       = submodule foreach git pull origin main
