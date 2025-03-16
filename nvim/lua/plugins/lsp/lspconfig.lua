@@ -28,14 +28,13 @@ return {
     end
 
     -- ✅ Now setup Quint LSP with COQ (autocomplete)
-    lspconfig.quint.setup(coq.lsp_ensure_capabilities({
+    lspconfig.quint.setup({
       cmd = { "quint-language-server", "--stdio" },
       filetypes = { "quint" },
       root_dir = function(fname)
         return vim.fs.dirname(fname)
       end,
-      single_file_support = true,
-    }))
+    })
 
     -- import mason_lspconfig plugin
     local mason_lspconfig = require("mason-lspconfig")
@@ -147,7 +146,7 @@ return {
         lspconfig["asm_lsp"].setup(coq.lsp_ensure_capabilities({
           filetypes = { "asm", "s" },
           root_dir = function(fname)
-            return lspconfig.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+            return vim.fs.dirname(fname)
           end,
         }))
       end,

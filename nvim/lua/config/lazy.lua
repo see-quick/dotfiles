@@ -26,6 +26,7 @@ vim.g.coq_settings = {
     snippets = { enabled = true },
   },
 }
+vim.lsp.set_log_level("debug")
 
 
 require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
