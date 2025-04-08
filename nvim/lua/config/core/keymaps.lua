@@ -21,3 +21,20 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
+
+-- Toggle file browser
+keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { desc = "Toggle NeoTree sidebar" })
+
+-- Reveal current file in NeoTree
+keymap.set("n", "<leader>f", ":Neotree reveal<CR>", { desc = "Reveal current file in NeoTree" })
+
+-- Open Netrw-style NeoTree in current window
+keymap.set("n", "<leader>E", ":Neotree position=current<CR>", { desc = "Open NeoTree like netrw" })
+
+-- Quick toggle between NeoTree/code
+keymap.set("n", "<leader>.", "<C-w>p", { desc = "Switch NeoTree ↔ Code" })
+
+-- Source shortcuts
+keymap.set("n", "<leader>nb", ":Neotree buffers<CR>", { desc = "Show open buffers in NeoTree" })
+keymap.set("n", "<leader>ng", ":Neotree git_status<CR>", { desc = "Show git status in NeoTree" })
+
