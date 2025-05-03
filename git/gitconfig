@@ -12,6 +12,7 @@
   a         = add
 
   # Quick commit and push
+  c         = commit -s
   cm        = commit -m
   amend     = commit --amend --no-edit
   pushf     = push --force-with-lease
