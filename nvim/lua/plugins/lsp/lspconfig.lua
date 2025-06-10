@@ -17,7 +17,6 @@ return {
     if not configs.quint then
       configs.quint = {
       default_config = {
-        cmd = { "quint-language-server", "--stdio" }, -- Start Quint LSP
         filetypes = { "quint" },
           root_dir = function(fname)
           return vim.fs.dirname(fname)
@@ -29,11 +28,26 @@ return {
 
     -- ✅ Now setup Quint LSP with COQ (autocomplete)
     lspconfig.quint.setup({
-      cmd = { "quint-language-server", "--stdio" },
+      -- if you want to try your own local just do this :)
+      cmd = { "/Users/morsak/Documents/Work/quint/vscode/quint-vscode/server/out/src/server.js", "--stdio" }, -- Start Quint LSP
+      -- cmd = { 'quint-language-server', '--stdio' },
       filetypes = { "quint" },
       root_dir = function(fname)
         return vim.fs.dirname(fname)
       end,
+       capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), {
+        textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true,
+          resolveSupport = {
+            properties = { "documentation", "detail", "additionalTextEdits" },
+          },
+        },
+        triggerCharacters = { ".", " ", "(", "{", "[", ":" },
+      },
+    },
+  }),
     })
 
     -- import mason_lspconfig plugin
